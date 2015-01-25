@@ -1,0 +1,26 @@
+Bad Smells:
+
+
+Code Duplications : Done in the following places:
+				database.php
+						functions insert, update and delete does the same thing, should be replace with "Execute Sql query"
+
+						Steps followed for solution:
+								Delegate functions of insert, delete update to "execute"
+								Tested
+								Replaced occurances of insert,delete, update with execute 
+Long Method : Done in the following places
+
+				splitUrl in application.php
+						extracted function getUrlPartsArray and putPartsIntoAccordingProperties from splitURL()
+				setControllerAndAction in application.php
+						extracted function setControllerAndAction from constructor
+				newPassMessageAndRedirections extracted from update_password in update.php
+				failedRedirection extracted from update_password in update.php
+				extract two two function from postObserver sub classes for public and friends each, also replaced temp with query where ever necessary.
+				Extracted load controller from load model
+					facade.php
+				Extracted getLastPostID and redirectBasedOnPrivacy from facade.php post method
+
+Rest of bad smells till parallel Hirarchy doesn't seem to be apply.
+  					
